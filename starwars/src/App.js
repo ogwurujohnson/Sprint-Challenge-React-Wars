@@ -6,10 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      next: false,
-      prev: false,
-      nextLink: '',
-      prevLink: ''
+      starwarsChars: []
     };
   }
 
@@ -26,6 +23,13 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
+        if (data.next) {
+          this.setState({ next: true });
+          this.setState({ nextLink: data.next });
+        } else {
+          this.setState({ next: false });
+          this.setState({ nextLink: '' });
+        }
         this.setState({ starwarsChars: data.results });
       })
       .catch(err => {
