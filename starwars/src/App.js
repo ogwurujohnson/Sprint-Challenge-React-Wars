@@ -23,12 +23,12 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        if (data.next) {
-          this.setState({ next: true });
-          this.setState({ nextLink: data.next });
+        if (data.previous) {
+          this.setState({ prev: true });
+          this.setState({ prevLink: data.previous });
         } else {
-          this.setState({ next: false });
-          this.setState({ nextLink: '' });
+          this.setState({ prev: false });
+          this.setState({ prevLink: '' });
         }
         this.setState({ starwarsChars: data.results });
       })
