@@ -3,7 +3,7 @@ import SingleCharacter from "./SingleCharacter";
 import "./StarWars.css";
 
 export default function AllCharacters(props) {
-  const { characters } = props;
+  const { characters, prevLink, nextLink, getCharacters, next, prev  } = props;
   return (
     <div>
       <ul>
