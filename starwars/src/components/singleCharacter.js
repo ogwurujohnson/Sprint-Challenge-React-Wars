@@ -13,11 +13,11 @@ export default function SingleCharacter(props) {
         </label>
         <div className="about">
           <div className="personal">
-            <p>{character.birth_year}</p>
-            <p>{character.eye_color}</p>
-            <p>{character.gender}</p>
-            <p>{character.hair_color}</p>
-            <p>{character.height}</p>
+            <p>BirthYear: {character.birth_year}</p>
+            <p>Eye-color: {character.eye_color}</p>
+            <p>Gender: {character.gender}</p>
+            <p>Hair-color: {character.hair_color}</p>
+            <p>Height: {character.height}</p>
           </div>
         </div>
       </li>
