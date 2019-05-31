@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: [],
+      characters: [],
       next: false,
       prev: false,
       nextLink: '',
@@ -41,7 +41,7 @@ class App extends Component {
           this.setState({ prev: false, prevLink: '' });
         }
 
-        this.setState({ starwarsChars: data.results });
+        this.setState({ characters: data.results });
       })
       .catch(err => {
         throw new Error(err);
@@ -52,7 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <AllCharacters next={this.state.next} prev={this.state.prev} nextLink={this.state.nextLink} prevLink={this.state.prevLink} getCharacters={this.getCharacters} characters={this.state.starwarsChars} />
+        <AllCharacters {...this.state} />
       </div>
     );
   }
