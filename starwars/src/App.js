@@ -29,20 +29,16 @@ class App extends Component {
       .then(data => {
         // check if next url exists, if yes change next true, so button shows
         if (data.next) {
-          this.setState({ next: true });
-          this.setState({ nextLink: data.next });
+          this.setState({ next: true, nextLink: data.next });
         } else {
-          this.setState({ next: false });
-          this.setState({ nextLink: '' });
+          this.setState({ next: false, nextLink: ''});
         }
 
         // same as next logic
         if (data.previous) {
-          this.setState({ prev: true });
-          this.setState({ prevLink: data.previous });
+          this.setState({ prev: true, prevLink: data.previous });
         } else {
-          this.setState({ prev: false });
-          this.setState({ prevLink: '' });
+          this.setState({ prev: false, prevLink: '' });
         }
 
         this.setState({ starwarsChars: data.results });
