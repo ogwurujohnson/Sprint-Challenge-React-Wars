@@ -1,17 +1,21 @@
-import React, { Component } from 'react';
-import AllCharacters from './components/AllCharacters';
-import './App.css';
+import React, { Component } from "react";
+import AllCharacters from "./components/AllCharacters";
+import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      next: false,
+      prev: false,
+      nextLink: '',
+      prevLink: ''
     };
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/');
+    this.getCharacters("https://swapi.co/api/people/");
   }
 
   getCharacters = URL => {
@@ -23,6 +27,16 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
+        // check if next url exists, if yes change next true, so button shows
+        if (data.next) {
+          this.setState({ next: true });
+          this.setState({ nextLink: data.next });
+        } else {
+          this.setState({ next: false });
+          this.setState({ nextLink: '' });
+        }
+
+        // same as next logic
         if (data.previous) {
           this.setState({ prev: true });
           this.setState({ prevLink: data.previous });
@@ -30,6 +44,7 @@ class App extends Component {
           this.setState({ prev: false });
           this.setState({ prevLink: '' });
         }
+
         this.setState({ starwarsChars: data.results });
       })
       .catch(err => {
@@ -41,7 +56,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <AllCharacters characters={this.state.starwarsChars}/>
+        <AllCharacters next={this.state.next} prev={this.state.prev} nextLink={this.state.nextLink} prevLink={this.state.prevLink} getCharacters={this.getCharacters} characters={this.state.starwarsChars} />
       </div>
     );
   }
