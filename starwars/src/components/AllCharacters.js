@@ -1,5 +1,6 @@
 import React from "react";
 import SingleCharacter from "./SingleCharacter";
+import PropTypes from "prop-types";
 import "./StarWars.css";
 
 export default function AllCharacters(props) {
@@ -46,4 +47,13 @@ export default function AllCharacters(props) {
       )}
     </div>
   );
+}
+
+AllCharacters.propType = {
+  characters: PropTypes.array,
+  prevLink: PropTypes.string,
+  nextLink: PropTypes.string,
+  getCharacters: PropTypes.func,
+  next: PropTypes.bool,
+  prev: PropTypes.bool,
 }
