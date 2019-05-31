@@ -7,6 +7,7 @@ export default function AllCharacters(props) {
   return (
     <div>
       <ul>
+        {/* map throught the characters set to display all characters */}
         {characters.map((character, index) => {
           return (
             <SingleCharacter
@@ -17,6 +18,32 @@ export default function AllCharacters(props) {
           );
         })}
       </ul>
+
+      {/* add a condition to determine when the buttons should show using the next and prev state created */}
+      {prev ? (
+        <button
+          onClick={() => {
+            getCharacters(prevLink);
+          }}
+        >
+          prev
+        </button>
+      ) : (
+        ""
+      )}
+
+
+      {next ? (
+        <button
+          onClick={() => {
+            getCharacters(nextLink);
+          }}
+        >
+          next
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
