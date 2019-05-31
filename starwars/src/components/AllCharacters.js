@@ -5,8 +5,9 @@ import PropTypes from "prop-types";
 import "./StarWars.css";
 
 export default function AllCharacters(props) {
-  const { characters, prevLink, nextLink, getCharacters, next, prev  } = props;
+  const { characters, prevLink, nextLink, getCharacters, next, prev, loading  } = props;
   return (
+    loading? "Loading...." :
     <div className="characterList">
       <ul>
         {/* map throught the characters set to display all characters */}
