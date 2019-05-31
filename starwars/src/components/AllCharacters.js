@@ -44,7 +44,10 @@ export default function AllCharacters(props) {
 }
 
 AllCharacters.propType = {
-  characters: PropTypes.array,
+  characters: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    eye_color: PropTypes.string
+  })),
   prevLink: PropTypes.string,
   nextLink: PropTypes.string,
   getCharacters: PropTypes.func,
