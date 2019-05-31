@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 
-export default function singleCharacter(props) {
+export default function SingleCharacter(props) {
   const { character, index } = props;
 
   return (
@@ -22,4 +23,9 @@ export default function singleCharacter(props) {
       </li>
     </Fragment>
   );
+}
+
+SingleCharacter.propType = {
+  character: PropTypes.object,
+  index: PropTypes.number,
 }
