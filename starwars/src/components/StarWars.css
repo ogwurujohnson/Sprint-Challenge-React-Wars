@@ -54,5 +54,8 @@ button {
   padding: 20px;
   font-size: 20px;
   cursor: pointer;
+  text-transform: uppercase;
+  background: #443e3e;
+  color: white;
 }
 
