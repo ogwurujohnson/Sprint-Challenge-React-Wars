@@ -26,11 +26,19 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+    - React is a UI library that is used in various forms to create complex, rich user interfaces. React breaks down complex application layouts into components making it easy to build out complex and large applications from little or tiny reusable parts. React tends to be referred to as the 'V' view in MVC
+
 - [ ] What does it mean to _think_ in react?
+
+    - To think in react refers to developing the mindset of developing small, reusable pieces of UI that can be easily put together to make a complex large application
 
 - [ ] Describe state.
 
+    - A state is an object that can be modified over time in response to user actions, network responses, etc. States are mutable, and to mutate a state we use setState()
+
 - [ ] Describe props.
+
+    props are similar to arguments. Props hold data passed from a parent component to its child component. Props are immutable
 
 ## Project Set Up
 

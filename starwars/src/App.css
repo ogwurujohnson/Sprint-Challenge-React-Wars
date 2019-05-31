@@ -6,3 +6,12 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body{
+  font-family: "Roboto", "Sans Serif";
+  font-size: 18pt;
+  color: #fff;
+  width: 80%;
+  margin: 0 auto;
+}
