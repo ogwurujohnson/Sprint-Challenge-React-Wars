@@ -7,7 +7,7 @@ import "./StarWars.css";
 export default function AllCharacters(props) {
   const { characters, prevLink, nextLink, getCharacters, next, prev  } = props;
   return (
-    <div>
+    <div className="characterList">
       <ul>
         {/* map throught the characters set to display all characters */}
         {characters.map((character, index) => {
@@ -32,12 +32,13 @@ export default function AllCharacters(props) {
 
 
       {next ? (
-        
+
         <Button getCharacters={getCharacters} link={nextLink} text="next"/>
         
       ) : (
         ""
       )}
+
     </div>
   );
 }

@@ -45,3 +45,13 @@ input[type="checkbox"]:checked + label {
   background: #443e3e;
   border-bottom: 1px solid #fff;
 }
+
+
+button {
+  width: 20%;
+  max-height: 20%;
+  height: 20%;
+  padding: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
