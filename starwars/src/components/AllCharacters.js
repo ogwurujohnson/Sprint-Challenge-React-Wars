@@ -1,5 +1,6 @@
 import React from "react";
 import SingleCharacter from "./SingleCharacter";
+import Button from "./Button";
 import PropTypes from "prop-types";
 import "./StarWars.css";
 
@@ -22,26 +23,18 @@ export default function AllCharacters(props) {
 
       {/* add a condition to determine when the buttons should show using the next and prev state created */}
       {prev ? (
-        <button
-          onClick={() => {
-            getCharacters(prevLink);
-          }}
-        >
-          prev
-        </button>
+
+        <Button getCharacters={getCharacters} link={prevLink} text="prev"/>
+        
       ) : (
         ""
       )}
 
 
       {next ? (
-        <button
-          onClick={() => {
-            getCharacters(nextLink);
-          }}
-        >
-          next
-        </button>
+        
+        <Button getCharacters={getCharacters} link={nextLink} text="next"/>
+        
       ) : (
         ""
       )}
