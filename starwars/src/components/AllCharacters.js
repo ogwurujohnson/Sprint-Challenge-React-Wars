@@ -1,5 +1,5 @@
 import React from "react";
-import SingleCharacter from "./SingleCharacter.js";
+import SingleCharacter from "./singleCharacter.js";
 import Button from "./Button";
 import PropTypes from "prop-types";
 import "./StarWars.css";
